@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Електронний Цифровий Підпис (RSA)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="title-wrap">
+      <h1>🔐 Електронний Цифровий Підпис (RSA)</h1>
+      <p class="subtitle"></p>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div class="panel-grid">
+
+      <!-- Генерація ключів -->
+      <div class="panel">
+        <h2>1️⃣ Генерація ключів</h2>
+        <div class="form">
+          <label>Просте число p
+            <input type="number" id="p" placeholder="наприклад, 61">
+          </label>
+          <label>Просте число q
+            <input type="number" id="q" placeholder="наприклад, 53">
+          </label>
+          <label>Відкрита експонента e
+            <input type="number" id="e" placeholder="наприклад, 17">
+          </label>
+        </div>
+        <div class="controls">
+          <button id="genKeys">Згенерувати ключі</button>
+        </div>
+        <div class="output" id="keysOutput"></div>
+      </div>
+
+      <!-- Підпис -->
+      <div class="panel">
+        <h2>2️⃣ Підпис документу</h2>
+        <div class="form">
+          <label>Повідомлення M
+            <input type="text" id="message" placeholder="Введіть повідомлення">
+          </label>
+        </div>
+        <div class="controls">
+          <button id="signBtn">Підписати</button>
+        </div>
+        <div class="output" id="signOutput"></div>
+      </div>
+
+      <!-- Перевірка -->
+      <div class="panel">
+        <h2>3️⃣ Перевірка підпису</h2>
+        <div class="form">
+          <label>Підпис S
+            <input type="text" id="verifyS" placeholder="Введіть підпис">
+          </label>
+          <label>Повідомлення M
+            <input type="text" id="verifyM" placeholder="Введіть повідомлення">
+          </label>
+        </div>
+        <div class="controls">
+          <button id="verifyBtn">Перевірити підпис</button>
+        </div>
+        <div class="output" id="verifyOutput"></div>
+      </div>
+
+      <!-- Перевірка підробки -->
+      <div class="panel">
+        <h2>4️⃣ Перевірка підробки</h2>
+        <div class="form">
+          <label>Нове повідомлення
+            <input type="text" id="fakeM" placeholder="Інше повідомлення">
+          </label>
+        </div>
+        <div class="controls">
+          <button id="fakeCheck">Перевірити підробку</button>
+        </div>
+        <div class="output" id="fakeOutput"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Розробив <strong>Толік</strong> | Демонстрація RSA ЕЦП</p>
+  </div>
+  <div class="author-card">
+  <img src= "avatar.jpg" alt="Author photo">
+  <p>Автор: <strong>jrxnrs</strong></p>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
